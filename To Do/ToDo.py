@@ -1,7 +1,7 @@
 import flet as ft
 
 def main(page: ft.Page):
-    page.bgcolor = ft.colors.BLUE_200
+    page.bgcolor = ft.colors.BLUE_100
     page.title = 'To Do List'
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
 

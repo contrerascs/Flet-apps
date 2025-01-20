@@ -19,6 +19,19 @@ def main(page: ft.Page):
         alignment=ft.alignment.center)
     )
 
-    page.add(titulo)
+    products = [
+        make_product('Product 1', 19.99, ft.colors.BLUE_500),
+        make_product('Product 2', 29.99, ft.colors.GREEN_500),
+        make_product('Product 3', 39.99, ft.colors.ORANGE_500),
+        make_product('Product 4', 49.99, ft.colors.PURPLE_500)
+    ]
+
+    gallery = ft.ResponsiveRow(
+        [ft.Container(product, col={'sm':12,'md':6,'lg':3}) for product in products],
+        run_spacing=20,
+        spacing=20
+    )
+
+    page.add(titulo, gallery)
 
 ft.app(target=main)

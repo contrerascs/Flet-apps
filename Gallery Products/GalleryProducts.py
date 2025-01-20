@@ -9,15 +9,16 @@ def main(page: ft.Page):
     def make_product(name,price,color):
         return ft.Container(
             content=ft.Column([
-            ft.Text(f'{name}', size=16, weight=ft.FontWeight.BOLD),
-            ft.Text(f'{price}', size=14),
-            ft.ElevatedButton('Add to car', color=ft.colors.WHITE)
-        ],
-        bgcolor=color,
-        border_radius=10,
-        padding=20,
-        alignment=ft.alignment.center)
-    )
+                ft.Text(f'{name}', size=16, weight=ft.FontWeight.BOLD),
+                ft.Text(f'{price}', size=14),
+                ft.ElevatedButton('Add to car', color=ft.colors.WHITE)
+            ]),
+            bgcolor=color,
+            border_radius=10,
+            padding=20,
+            alignment=ft.alignment.center
+        )
+        
 
     products = [
         make_product('Product 1', 19.99, ft.colors.BLUE_500),

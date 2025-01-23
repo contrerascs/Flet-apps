@@ -2,6 +2,9 @@ import flet as ft
 import os
 import base64 
 
+path = r"D:\Sam Contreras\Documents\Programacion\Python\Flet-apps\Gallery Products\assets\Producto1.png"
+print("Existe:", os.path.exists(path))
+
 def main(page: ft.Page):
     page.title = 'Gallery of products'
     page.theme_mode = ft.ThemeMode.DARK
@@ -11,7 +14,7 @@ def main(page: ft.Page):
     def make_product(name,price,color, imagen_nombre):
         imagen_path = os.path.join(os.path.dirname(__file__), 'assets', imagen_nombre)
         try:
-            with open(imagen_nombre, 'rb') as image_file:
+            with open(imagen_path, 'rb') as image_file:
                 imagen_bytes = base64.b64encode(image_file.read()).decode()
         except FileNotFoundError:
             print(f'Advertencia: La imagen {imagen_nombre} no existe en {imagen_path}')

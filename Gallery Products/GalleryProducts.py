@@ -9,7 +9,6 @@ def main(page: ft.Page):
     page.title = 'Gallery of products'
     page.theme_mode = ft.ThemeMode.DARK
     page.bgcolor = ft.colors.BLUE_900
-    titulo = ft.Text('Gallery of products', size=32, weight=ft.FontWeight.BOLD)
     
     def make_product(name,price,color, imagen_nombre):
         imagen_path = os.path.join(os.path.dirname(__file__), 'assets', imagen_nombre)
@@ -43,7 +42,11 @@ def main(page: ft.Page):
         make_product('Product 1', 19.99, ft.colors.BLUE_500,"Producto1.png"),
         make_product('Product 2', 29.99, ft.colors.GREEN_500,"Producto2.png"),
         make_product('Product 3', 39.99, ft.colors.ORANGE_500,"Producto3.png"),
-        make_product('Product 4', 49.99, ft.colors.PURPLE_500,"Producto4.png")
+        make_product('Product 4', 49.99, ft.colors.PURPLE_500,"Producto4.png"),
+        make_product('Product 5', 19.99, ft.colors.BLUE_500,"Producto5.png"),
+        make_product('Product 6', 29.99, ft.colors.GREEN_500,"Producto6.png"),
+        make_product('Product 7', 39.99, ft.colors.ORANGE_500,"Producto7.png"),
+        make_product('Product 8', 49.99, ft.colors.PURPLE_500,"Producto8.png")
     ]
 
     gallery = ft.ResponsiveRow(
@@ -52,6 +55,12 @@ def main(page: ft.Page):
         spacing=20
     )
 
-    page.add(titulo, gallery)
+    contenido = ft.Column([
+        ft.Text('Product Gallery', size=32, weight=ft.FontWeight.BOLD),
+        ft.Divider(height=20, color=ft.colors.WHITE24),
+        gallery
+    ], scroll=ft.ScrollMode.AUTO, expand=True)
+
+    page.add(contenido)
 
 ft.app(target=main)

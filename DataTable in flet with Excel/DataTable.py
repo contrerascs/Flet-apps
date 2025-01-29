@@ -7,6 +7,17 @@ def main(page: ft.Page):
 
     titulo = ft.Text('DataTable in Flet', size=24, color=ft.colors.WHITE)
 
-    page.add(titulo)
+    data_table = ft.DataTable(
+        bgcolor=ft.colors.BLUE_GREY_600,
+        border=ft.border.all(2,ft.colors.BLUE_GREY_200),
+        columns=[
+            ft.DataColumn(ft.Text('ID', color=ft.colors.BLUE_200)),
+            ft.DataColumn(ft.Text('Name', color=ft.colors.BLUE_200)),
+            ft.DataColumn(ft.Text('Age', color=ft.colors.BLUE_200)),
+        ],
+        rows=[]
+    )
+
+    page.add(titulo, data_table)
 
 ft.app(target=main)

@@ -48,6 +48,9 @@ def main(page: ft.Page):
 
             wb.save(file_name)
 
+            snack_bar = ft.SnackBar(content=ft.Text(f'Data saved successfully{file_name}'))
+            page.overlay.append(snack_bar)
+
 
     input_name = ft.TextField(label='Name',
                               bgcolor=ft.colors.BLUE_GREY_700,

@@ -50,6 +50,8 @@ def main(page: ft.Page):
 
             snack_bar = ft.SnackBar(content=ft.Text(f'Data saved successfully{file_name}'))
             page.overlay.append(snack_bar)
+            snack_bar.open = True
+            page.update()
 
 
     input_name = ft.TextField(label='Name',

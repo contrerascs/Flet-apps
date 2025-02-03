@@ -34,7 +34,6 @@ def main(page: ft.Page):
     
     task_list = ft.ListView(expand=1, spacing=3)
 
-
     tasks = []
 
     selected_task = ft.Text('', size=20, weight=ft.FontWeight.BOLD)

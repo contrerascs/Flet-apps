@@ -8,6 +8,11 @@ def main(page: ft.Page):
 
     titulo = ft.Text('Ejemplo de Tabs in Flet', size=24, color=ft.colors.WHITE)
 
+    tabs = ft.Tabs(
+        selected_index=0,
+        
+    )
+
     page.add(titulo)
 
 ft.app(target=main)

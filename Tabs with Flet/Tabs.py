@@ -11,7 +11,7 @@ def main(page: ft.Page):
     def generar_tareas():
         tareas = ['Hacer la compra', 'Llamar al médico', 'Estudiar para el examen',
                   'Hacer ejercicio', 'Leer un libro', 'Preparar la cena']
-        return [random.choice(tareas) for _ in range(5)]
+        return [random.sample(tareas) for _ in range(5)]
     
     lista_tareas = ft.ListView(spacing=10, padding=20)
 
